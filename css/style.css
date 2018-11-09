@@ -1,0 +1,209 @@
+/* GENERAL */
+/*********************************/
+/*    DEFINE COLOR PALETTE       */
+/*********************************/
+.deepTeal {color: rgb(51, 153, 153);}
+.greyTeal {color: rgb(153, 204, 204);}
+.greyGreen {color: rgb(153, 204, 153);}
+.brightOrange {
+  color: rgb(255, 153, 51);
+  background-color: rgb(153, 204, 153, .7); /* -- faded greyGreen background -- */
+  font-weight: 900;                         /*       very dark                 */
+}
+.burgundyRed {
+  color: rgb(153, 0, 0);
+  background-color: rgb(153, 204, 204, .5); /* -- faded greyTeal background -- */
+  font-weight: 900;                         /*       very dark                 */
+}
+.brightTeal {
+  color: rgb(51, 204, 204);
+  background-color: rgb(51, 153, 153, .5); /* -- faded deepTeal background -- */
+  font-weight: 900;                        /*       very dark                 */
+}
+
+/*********************************/
+/*  DEFINE MAIN PAGE ATTRIBUTES  */
+/*********************************/
+body {
+  height: 300px;
+  background-color: rgba(153, 204, 153, 0.5); /* -- faded greyGreen -- */
+}
+
+
+.topBox {
+  border: 2px solid #990000;   /* --    burgundyRed solid border    -- */
+  color: rgb(51, 153, 153);    /* --    deepTeal                    -- */
+  font-weight: 700;            /*       darker color                   */
+  width: 80%;
+  max-width: 100%;             /* Make responsive images within box structures */
+  height: auto;
+  max-height: fit-content;
+  margin: 10px auto 20px;
+}
+
+.mainHeader {
+  margin: 0;  /* Remove white space at top of page */
+              /* on small screens, display a small floral background image behind the navigation box */
+  background: url("../img/wedding-white-red-5-3d.png") repeat;/* contain=large as possible w/out cropping/stretching; -- */
+              /* background: bg-image position size repeat-style color; if image unavailable, body background color will display*/
+  background-position: center;
+  background-size: cover;
+  margin-top: 50px;
+}
+
+.titleText {
+  font-family: 'Flavors', cursive;
+  font-weight: 900;
+  background: rgb(153, 204, 204, .6); /* -- faded greyTeal -- */
+  text-align: center;
+  padding: 20px auto;
+}
+
+.navButtons {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; /* Display buttons flush from start of container on small screens */
+  list-style-type: none;       /* Remove default bullets by list items                           */
+}
+
+.roundButton {
+  background: rgb(153, 204, 204, .8); /* -- faded greyTeal -- */
+  padding: 20px;
+  margin-bottom: 10%;
+  border: 1px solid rgb(153, 0, 0);   /* --  burgundyRed   -- */
+  border-radius: 50%;                 /* --  round buttons -- */
+  font-weight: 700;                   /*    darker color      */
+  font-size: 1em;
+  text-align: center;
+  max-width: 100px;
+  position: relative;
+}
+
+/******************************************/
+/* SET UP CONTAINER FOR GALLERY SLIDESHOW */
+/******************************************/
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 80%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Define next/previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  font-weight: 900; /* very dark */
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the next button to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Add a faded background color upon hover */
+.prev:hover, .next:hover {
+  background-color: rgba(153, 204, 153, 0.5); /* -- faded greyGreen -- */
+}
+
+/* Define text for captions and number text (1 of 3, etc) */
+.text, .numbertext {
+  font-weight: 700; /* darker color */
+  font-size: 1.25em;
+  padding: 8px 12px;
+  position: absolute;
+  background-color: inherit;
+}
+.text {
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.numbertext {
+  top: 0;  /* Display in top left corner of image */
+}
+
+/* Define the dots/bullets/indicators */
+.dot {
+  background-color: rgb(51, 153, 153); /* deepTeal */
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border-radius: 50%;       /* Round */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*****************************************/
+.prev, .next, .text, .numbertext,
+.active, .dot:hover {
+  background-color: rgb(51, 153, 153, .5); /* -- faded deepTeal background -- */
+}
+
+
+.mainFooter{
+  /* ******* NOT USED YET *****  */
+}
+
+/**********************************/
+/*  ADD CLEARFIX TO RESET FLOATS  */
+/**********************************/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/******************************************/
+/*  MEDIA QUERIES FOR LARGER SCREEN SIZES */
+/******************************************/
+
+/* On screens 600px or greater */
+@media screen and (min-width: 600px) {
+  .mainHeader {
+    background: url("../img/wedding-spray-3d.png") no-repeat;
+    height: fit-content;
+    background-position: center;
+    background-size: cover;
+    margin-top: auto;
+    }
+  /* Give more emphasis to gallery navigation buttons on larger screens */
+  .prev, .next, .text, .numbertext,
+  .active, .dot:hover {
+      background-color: rgb(255, 153, 51, .5); /* -- brightOrange -- */
+  }
+}
